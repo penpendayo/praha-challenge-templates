@@ -58,8 +58,8 @@ describe("sumOfArray", (): void => {
   });
 
   describe("空の配列を渡した場合", (): void => {
-    it("エラーがスローされる", (): void => {
-      expect(() => sumOfArray([])).toThrow(TypeError);
+    it("0が返却される", (): void => {
+      expect(sumOfArray([])).toBe(0);
     });
   });
 
@@ -134,8 +134,8 @@ describe("asyncSumOfArray", (): void => {
   });
 
   describe("空の配列を渡した場合", (): void => {
-    it("エラーがスローされる", async (): Promise<void> => {
-      await expect(asyncSumOfArray([])).rejects.toThrow(TypeError);
+    it("0が返却される", async (): Promise<void> => {
+      await expect(asyncSumOfArray([])).resolves.toBe(0);
     });
   });
 
